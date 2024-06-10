@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import ProductRoutes from "./routes/Product.route";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;;
 const uriMongoDB =
     "mongodb+srv://loinguyenlamthanh:9HVuiXXiTrZEsl7D@backenddb.49w86gg.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB";
 
