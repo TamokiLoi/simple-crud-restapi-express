@@ -1,13 +1,13 @@
-require('dotenv').config();
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import ProductRoutes from "./routes/Product.route";
 
+dotenv.config();
+
 const app = express();
 const port = process.env.PORT || 3000;
-const uriMongoDB =
-    process.env.MONGODB_URI ||
-    "mongodb+srv://loinguyenlamthanh:9HVuiXXiTrZEsl7D@backenddb.49w86gg.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB";
+const uriMongoDB = process.env.MONGODB_URI || "";
 
 mongoose
     .connect(uriMongoDB)
@@ -24,7 +24,7 @@ mongoose
 
 // middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use("/api/products", ProductRoutes);
